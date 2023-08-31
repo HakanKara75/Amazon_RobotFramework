@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230831 19:38:22.886" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Cases" source="C:\Users\HakanBatirhan\IdeaProjects\Amazon_RobotFramework\tests\test_cases.robot">
+<test id="s1-t1" name="Product_Test" line="6">
+<kw name="Open Amazon Page" library="AmazonPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${AMAZON_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230831 19:38:23.189" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.tr'.</msg>
+<status status="PASS" starttime="20230831 19:38:23.189" endtime="20230831 19:38:28.281"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230831 19:38:28.282" endtime="20230831 19:38:28.424"/>
+</kw>
+<status status="PASS" starttime="20230831 19:38:23.188" endtime="20230831 19:38:28.424"/>
+</kw>
+<kw name="Search Product" library="AmazonPage">
+<arg>"Robot Framework Book Test Automation"</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AmazonLocators.SEARCH_BOX}</arg>
+<arg>${product_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230831 19:38:28.428" level="INFO">Typing text '"Robot Framework Book Test Automation"' into text field 'id:twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20230831 19:38:28.426" endtime="20230831 19:38:28.945"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AmazonLocators.SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230831 19:38:28.949" level="INFO">Clicking element 'id:nav-search-submit-button'.</msg>
+<status status="PASS" starttime="20230831 19:38:28.947" endtime="20230831 19:38:30.515"/>
+</kw>
+<status status="PASS" starttime="20230831 19:38:28.425" endtime="20230831 19:38:30.516"/>
+</kw>
+<status status="PASS" starttime="20230831 19:38:23.186" endtime="20230831 19:38:30.517"/>
+</test>
+<status status="PASS" starttime="20230831 19:38:22.891" endtime="20230831 19:38:30.519"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
