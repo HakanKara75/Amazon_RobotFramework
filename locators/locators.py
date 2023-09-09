@@ -1,4 +1,11 @@
 class AmazonLocators:
     SEARCH_BOX= "id:twotabsearchtextbox"
     SEARCH_BUTTON= "id:nav-search-submit-button"
-    FIRST_RESULT= "xpath://span[text()='Robot Framework Test Automation (English Edition)']"
+    RESULT= "xpath://div[@class='a-section a-spacing-small a-spacing-top-small']//span[@class='a-color-state a-text-bold']"
+    FIRST_PRODUCT= "xpath://div[@data-asin='1783283033']//h2[@class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']"
+    HELP_BUTTON= "xpath://div[@class='navFooterLinkCol navAccessibility']//a[contains(@href, 'footer_gw_m_b_he')]"
+    FIRST_SUNGLASSES= "xpath://div[@cel_widget_id='MAIN-SEARCH_RESULTS-6']"
+    ADD_TO_CART="id:add-to-cart-button"
+    ALL="css:.hm-icon-label"
+    ELEKTRONIK="xpath://a[@data-menu-id='5']"
+    CAMERA="xpath:(//ul[@data-menu-id='5']//a[@class='hmenu-item'])[2]"

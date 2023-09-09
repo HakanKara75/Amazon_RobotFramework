@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230831 19:38:22.886" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230909 16:38:34.408" rpa="false" schemaversion="4">
 <suite id="s1" name="Test Cases" source="C:\Users\HakanBatirhan\IdeaProjects\Amazon_RobotFramework\tests\test_cases.robot">
-<test id="s1-t1" name="Product_Test" line="6">
+<test id="s1-t1" name="Price Verification" line="13">
 <kw name="Open Amazon Page" library="AmazonPage">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${AMAZON_URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230831 19:38:23.189" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.tr'.</msg>
-<status status="PASS" starttime="20230831 19:38:23.189" endtime="20230831 19:38:28.281"/>
+<msg timestamp="20230909 16:38:34.724" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/ref=nav_logo'.</msg>
+<status status="PASS" starttime="20230909 16:38:34.724" endtime="20230909 16:38:37.904"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230831 19:38:28.282" endtime="20230831 19:38:28.424"/>
+<status status="PASS" starttime="20230909 16:38:37.906" endtime="20230909 16:38:38.139"/>
 </kw>
-<status status="PASS" starttime="20230831 19:38:23.188" endtime="20230831 19:38:28.424"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230909 16:38:43.141" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230909 16:38:38.139" endtime="20230909 16:38:43.141"/>
 </kw>
-<kw name="Search Product" library="AmazonPage">
-<arg>"Robot Framework Book Test Automation"</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${AmazonLocators.SEARCH_BOX}</arg>
-<arg>${product_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230831 19:38:28.428" level="INFO">Typing text '"Robot Framework Book Test Automation"' into text field 'id:twotabsearchtextbox'.</msg>
-<status status="PASS" starttime="20230831 19:38:28.426" endtime="20230831 19:38:28.945"/>
+<status status="PASS" starttime="20230909 16:38:34.724" endtime="20230909 16:38:43.141"/>
+</kw>
+<kw name="Go to Elektronik" library="AmazonPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AmazonLocators.ALL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230909 16:38:43.159" level="INFO">Clicking element 'css:.hm-icon-label'.</msg>
+<status status="PASS" starttime="20230909 16:38:43.142" endtime="20230909 16:38:53.270"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${AmazonLocators.SEARCH_BUTTON}</arg>
+<arg>${AmazonLocators.ELEKTRONIK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230831 19:38:28.949" level="INFO">Clicking element 'id:nav-search-submit-button'.</msg>
-<status status="PASS" starttime="20230831 19:38:28.947" endtime="20230831 19:38:30.515"/>
+<msg timestamp="20230909 16:38:53.272" level="INFO">Clicking element 'xpath://a[@data-menu-id='5']'.</msg>
+<status status="PASS" starttime="20230909 16:38:53.270" endtime="20230909 16:38:53.346"/>
 </kw>
-<status status="PASS" starttime="20230831 19:38:28.425" endtime="20230831 19:38:30.516"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AmazonLocators.CAMERA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230909 16:38:53.349" level="INFO">Clicking element 'xpath:(//ul[@data-menu-id='5']//a[@class='hmenu-item'])[2]'.</msg>
+<status status="PASS" starttime="20230909 16:38:53.346" endtime="20230909 16:38:55.288"/>
 </kw>
-<status status="PASS" starttime="20230831 19:38:23.186" endtime="20230831 19:38:30.517"/>
+<status status="PASS" starttime="20230909 16:38:43.141" endtime="20230909 16:38:55.288"/>
+</kw>
+<status status="PASS" starttime="20230909 16:38:34.723" endtime="20230909 16:38:55.288"/>
 </test>
-<status status="PASS" starttime="20230831 19:38:22.891" endtime="20230831 19:38:30.519"/>
+<status status="PASS" starttime="20230909 16:38:34.411" endtime="20230909 16:38:55.289"/>
 </suite>
 <statistics>
 <total>
