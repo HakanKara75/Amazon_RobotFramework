@@ -9,3 +9,4 @@ class AmazonLocators:
     ALL="css:.hm-icon-label"
     ELEKTRONIK="xpath://a[@data-menu-id='5']"
     CAMERA="xpath:(//ul[@data-menu-id='5']//a[@class='hmenu-item'])[2]"
+    TRIMMER_LIST="xpath://span[@class='a-size-base-plus a-color-base a-text-normal']"
