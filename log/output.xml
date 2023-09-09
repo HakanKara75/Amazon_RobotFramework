@@ -1,579 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230909 20:39:04.582" rpa="false" schemaversion="4">
-<suite id="s1" name="Test Cases" source="C:\Users\HakanBatirhan\IdeaProjects\Amazon_RobotFramework\tests\test_cases.robot">
-<test id="s1-t1" name="Product_Test" line="13">
-<kw name="setUpWeb" library="AmazonPage" type="SETUP">
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230909 21:07:32.541" rpa="false" schemaversion="4">
+<suite id="s1" name="Tesla Test" source="C:\Users\HakanBatirhan\IdeaProjects\Amazon_RobotFramework\tests\Tesla_Test.robot">
+<test id="s1-t1" name="Test Tesla Account Page" line="7">
+<kw name="Go To Tesla Homepage" library="TeslaPage">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${AMAZON_URL}</arg>
+<arg>${Data.TESLA_HOME_PAGE_URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230909 20:39:04.789" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/ref=nav_logo'.</msg>
-<status status="PASS" starttime="20230909 20:39:04.789" endtime="20230909 20:39:08.062"/>
+<msg timestamp="20230909 21:07:32.768" level="INFO">Opening browser 'chrome' to base url 'https://www.tesla.com/'.</msg>
+<status status="PASS" starttime="20230909 21:07:32.767" endtime="20230909 21:07:40.138"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230909 20:39:08.063" endtime="20230909 20:39:08.191"/>
+<status status="PASS" starttime="20230909 21:07:40.139" endtime="20230909 21:07:40.446"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230909 21:07:40.447" endtime="20230909 21:07:40.448"/>
+</kw>
+<status status="PASS" starttime="20230909 21:07:32.767" endtime="20230909 21:07:40.448"/>
+</kw>
+<kw name="Go To Account Page" library="TeslaPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TeslaLocators.ACCOUNT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230909 21:07:40.450" level="INFO">Clicking element 'id=dx-nav-item--account'.</msg>
+<status status="PASS" starttime="20230909 21:07:40.449" endtime="20230909 21:07:42.835"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20230909 21:07:42.843" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
+Make sure tests are run with a physical or virtual display.</msg>
+<msg timestamp="20230909 21:07:42.844" level="INFO" html="true">&lt;a href="screenshot_1.jpg"&gt;&lt;img src="screenshot_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230909 21:07:42.837" endtime="20230909 21:07:42.844"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
+<arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230909 20:39:13.192" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230909 20:39:08.191" endtime="20230909 20:39:13.192"/>
+<msg timestamp="20230909 21:07:52.844" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230909 21:07:42.844" endtime="20230909 21:07:52.844"/>
 </kw>
-<status status="PASS" starttime="20230909 20:39:04.789" endtime="20230909 20:39:13.193"/>
+<status status="PASS" starttime="20230909 21:07:40.449" endtime="20230909 21:07:52.844"/>
 </kw>
-<kw name="Search Product" library="AmazonPage">
-<arg>Robot Framework Book Test Automation</arg>
+<kw name="Login To Tesla" library="TeslaPage">
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${AmazonLocators.SEARCH_BOX}</arg>
-<arg>${product_name}</arg>
+<arg>${TeslaLocators.EMAIL}</arg>
+<arg>${Data.Email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:13.196" level="INFO">Typing text 'Robot Framework Book Test Automation' into text field 'id:twotabsearchtextbox'.</msg>
-<status status="PASS" starttime="20230909 20:39:13.194" endtime="20230909 20:39:13.396"/>
+<msg timestamp="20230909 21:07:52.846" level="INFO">Typing text 'tesla@tesla.com' into text field 'id=form-input-identity'.</msg>
+<status status="PASS" starttime="20230909 21:07:52.845" endtime="20230909 21:07:52.926"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${AmazonLocators.SEARCH_BUTTON}</arg>
+<arg>${TeslaLocators.NEXT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:13.397" level="INFO">Clicking element 'id:nav-search-submit-button'.</msg>
-<status status="PASS" starttime="20230909 20:39:13.397" endtime="20230909 20:39:15.102"/>
+<msg timestamp="20230909 21:07:52.927" level="INFO">Clicking element 'id=form-submit-continue'.</msg>
+<status status="PASS" starttime="20230909 21:07:52.926" endtime="20230909 21:07:55.481"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${actual}</var>
-<arg>${AmazonLocators.RESULT}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:15.137" level="INFO">${actual} = "Robot Framework Book Test Automation"</msg>
-<status status="PASS" starttime="20230909 20:39:15.103" endtime="20230909 20:39:15.137"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${actual}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:15.138" level="INFO">"Robot Framework Book Test Automation"</msg>
-<status status="PASS" starttime="20230909 20:39:15.137" endtime="20230909 20:39:15.138"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${expected_text}</var>
-<arg>Robot Framework Book Test Automation</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230909 20:39:15.138" level="INFO">${expected_text} = Robot Framework Book Test Automation</msg>
-<status status="PASS" starttime="20230909 20:39:15.138" endtime="20230909 20:39:15.138"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${actual}</arg>
-<arg>${expected_text}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230909 20:39:15.138" endtime="20230909 20:39:15.139"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:13.193" endtime="20230909 20:39:15.139"/>
-</kw>
-<kw name="Click Firts Result" library="AmazonPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${AmazonLocators.FIRST_PRODUCT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:15.140" level="INFO">Clicking element 'xpath://div[@data-asin='1783283033']//h2[@class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']'.</msg>
-<status status="PASS" starttime="20230909 20:39:15.139" endtime="20230909 20:39:15.194"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:15.139" endtime="20230909 20:39:15.194"/>
-</kw>
-<kw name="Go to help page" library="AmazonPage">
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230909 20:39:15.195" level="INFO">Executing JavaScript:
-window.scrollTo(0, document.body.scrollHeight)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230909 20:39:15.194" endtime="20230909 20:39:15.202"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TeslaLocators.PASSWORD}</arg>
+<arg>${Data.Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230909 21:07:55.482" level="INFO">Typing text '123A.45?' into text field 'id=form-input-credential'.</msg>
+<msg timestamp="20230909 21:08:05.756" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-52.png"&gt;&lt;img src="selenium-screenshot-52.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230909 21:08:05.757" level="FAIL">Element with locator 'id=form-input-credential' not found.</msg>
+<status status="FAIL" starttime="20230909 21:07:55.481" endtime="20230909 21:08:05.761"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${AmazonLocators.HELP_BUTTON}</arg>
+<arg>${TeslaLocators.SIGN_IN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:15.203" level="INFO">Clicking element 'xpath://div[@class='navFooterLinkCol navAccessibility']//a[contains(@href, 'footer_gw_m_b_he')]'.</msg>
-<status status="PASS" starttime="20230909 20:39:15.203" endtime="20230909 20:39:16.131"/>
+<status status="NOT RUN" starttime="20230909 21:08:05.762" endtime="20230909 21:08:05.762"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230909 20:39:19.131" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230909 20:39:16.131" endtime="20230909 20:39:19.131"/>
+<status status="FAIL" starttime="20230909 21:07:52.844" endtime="20230909 21:08:05.762"/>
 </kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<var>${actual_title}</var>
-<doc>Returns the title of the current page.</doc>
-<msg timestamp="20230909 20:39:19.152" level="INFO">${actual_title} = Help &amp; Contact Us - Amazon Customer Service</msg>
-<status status="PASS" starttime="20230909 20:39:19.132" endtime="20230909 20:39:19.152"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${expected_title}</var>
-<arg>Help &amp; Contact Us - Amazon Customer Service</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230909 20:39:19.153" level="INFO">${expected_title} = Help &amp; Contact Us - Amazon Customer Service</msg>
-<status status="PASS" starttime="20230909 20:39:19.152" endtime="20230909 20:39:19.153"/>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>${expected_title}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230909 20:39:19.164" level="INFO">Page title is 'Help &amp; Contact Us - Amazon Customer Service'.</msg>
-<status status="PASS" starttime="20230909 20:39:19.153" endtime="20230909 20:39:19.164"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${actual_title}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:19.165" level="INFO">Help &amp; Contact Us - Amazon Customer Service</msg>
-<status status="PASS" starttime="20230909 20:39:19.165" endtime="20230909 20:39:19.165"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${expected_title}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:19.166" level="INFO">Help &amp; Contact Us - Amazon Customer Service</msg>
-<status status="PASS" starttime="20230909 20:39:19.166" endtime="20230909 20:39:19.166"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230909 20:39:22.168" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230909 20:39:19.167" endtime="20230909 20:39:22.168"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:15.194" endtime="20230909 20:39:22.168"/>
-</kw>
-<kw name="tearDown" library="AmazonPage" type="TEARDOWN">
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20230909 20:39:22.168" endtime="20230909 20:39:28.430"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:22.168" endtime="20230909 20:39:28.430"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:04.788" endtime="20230909 20:39:28.430"/>
+<status status="FAIL" starttime="20230909 21:07:32.767" endtime="20230909 21:08:05.763">Element with locator 'id=form-input-credential' not found.</status>
 </test>
-<test id="s1-t2" name="Price Verification" line="19">
-<kw name="setUpWeb" library="AmazonPage" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${AMAZON_URL}</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230909 20:39:28.435" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/ref=nav_logo'.</msg>
-<status status="PASS" starttime="20230909 20:39:28.433" endtime="20230909 20:39:31.055"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230909 20:39:31.055" endtime="20230909 20:39:31.190"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230909 20:39:36.191" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230909 20:39:31.190" endtime="20230909 20:39:36.191"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:28.432" endtime="20230909 20:39:36.192"/>
-</kw>
-<kw name="Go to Elektronik" library="AmazonPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${AmazonLocators.ALL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:36.195" level="INFO">Clicking element 'css:.hm-icon-label'.</msg>
-<status status="PASS" starttime="20230909 20:39:36.193" endtime="20230909 20:39:45.999"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${AmazonLocators.ELEKTRONIK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:46.000" level="INFO">Clicking element 'xpath://a[@data-menu-id='5']'.</msg>
-<status status="PASS" starttime="20230909 20:39:45.999" endtime="20230909 20:39:46.069"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230909 20:39:49.071" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230909 20:39:46.070" endtime="20230909 20:39:49.071"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${AmazonLocators.CAMERA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230909 20:39:49.072" level="INFO">Clicking element 'xpath:(//ul[@data-menu-id='5']//a[@class='hmenu-item'])[2]'.</msg>
-<status status="PASS" starttime="20230909 20:39:49.071" endtime="20230909 20:39:51.070"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230909 20:39:54.071" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230909 20:39:51.071" endtime="20230909 20:39:54.071"/>
-</kw>
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>@{products}</var>
-<arg>${AmazonLocators.TRIMMER_LIST}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20230909 20:39:54.092" level="INFO">@{products} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_133")&gt; | &lt;selenium.webdriver.remote.webelement.WebElem...</msg>
-<status status="PASS" starttime="20230909 20:39:54.072" endtime="20230909 20:39:54.092"/>
-</kw>
-<for flavor="IN">
-<var>${product}</var>
-<value>@{products}</value>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_133")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.103" level="INFO">Fujifilm Instax Mini 12 Instant Camera Lilac Purple + Shutter Compatible Carrying Case + Fuji Film Value Pack (20 Sheets) + Shutter Accessories Bundle, Color Filters, Photo Album, Assorted Frames</msg>
-<status status="PASS" starttime="20230909 20:39:54.093" endtime="20230909 20:39:54.103"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.093" endtime="20230909 20:39:54.103"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_134")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.112" level="INFO">Fujifilm Instax Mini 11 Instant Camera + Fuji Instax Film 20 Shots + Protective Case + Frames Design Kit (Blush Pink)</msg>
-<status status="PASS" starttime="20230909 20:39:54.104" endtime="20230909 20:39:54.112"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.104" endtime="20230909 20:39:54.112"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_135")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.119" level="INFO">FujiFilm Instax Mini 9 Instant Camera + Fujifilm Instax Mini Film (60 Sheets) Bundle with Deals Number One Accessories Including Carrying Case, Selfie Lens, Photo Album (Cobalt Blue)</msg>
-<status status="PASS" starttime="20230909 20:39:54.112" endtime="20230909 20:39:54.119"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.112" endtime="20230909 20:39:54.119"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_136")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.127" level="INFO">SanDisk 128GB Extreme PRO SDXC UHS-I Memory Card - C10, U3, V30, 4K UHD, SD Card - SDSDXXD-128G-GN4IN</msg>
-<status status="PASS" starttime="20230909 20:39:54.120" endtime="20230909 20:39:54.127"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.119" endtime="20230909 20:39:54.127"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_137")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.134" level="INFO">Fujifilm Instax Mini Instant Film Twin Pack (White)</msg>
-<status status="PASS" starttime="20230909 20:39:54.128" endtime="20230909 20:39:54.134"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.127" endtime="20230909 20:39:54.134"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_138")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.142" level="INFO">SanDisk 128GB Extreme microSDXC UHS-I Memory Card with Adapter - Up to 190MB/s, C10, U3, V30, 4K, 5K, A2, Micro SD Card - SDSQXAA-128G-GN6MA</msg>
-<status status="PASS" starttime="20230909 20:39:54.135" endtime="20230909 20:39:54.142"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.134" endtime="20230909 20:39:54.142"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_139")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.148" level="INFO">WYZE Cam Pan v3 Indoor/Outdoor IP65-Rated 1080p Pan/Tilt/Zoom Wi-Fi Smart Home Security Camera with Motion Tracking for Baby &amp; Pet, Color Night Vision, 2-Way Audio, Works with Alexa &amp; Google Assistant</msg>
-<status status="PASS" starttime="20230909 20:39:54.142" endtime="20230909 20:39:54.148"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.142" endtime="20230909 20:39:54.149"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_140")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.157" level="INFO">HAPPRUN Projector, Native 1080P Bluetooth Projector with 100''Screen, 9500L Portable Outdoor Movie Projector Compatible with Smartphone, HDMI,USB,AV,Fire Stick, PS5</msg>
-<status status="PASS" starttime="20230909 20:39:54.149" endtime="20230909 20:39:54.157"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.149" endtime="20230909 20:39:54.157"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_141")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.165" level="INFO">Emart Backdrop Stand 10x7ft(WxH) Photo Studio Adjustable Background Stand Support Kit with 2 Crossbars, 8 Backdrop Clamps, 2 Sandbags and Carrying Bag for Parties Wedding Events Decoration</msg>
-<status status="PASS" starttime="20230909 20:39:54.158" endtime="20230909 20:39:54.165"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.157" endtime="20230909 20:39:54.165"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_142")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.175" level="INFO">AuKing Projector, 2023 Upgraded Mini Projector, Full HD 1080P Home Theater Video Projector, Compatible with HDMI/USB/VGA/AV/Smartphone/TV Box/Laptop</msg>
-<status status="PASS" starttime="20230909 20:39:54.166" endtime="20230909 20:39:54.175"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.165" endtime="20230909 20:39:54.175"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_143")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.183" level="INFO">SAMSUNG EVO Select Micro SD-Memory-Card + Adapter, 512GB microSDXC 130MB/s Full HD &amp; 4K UHD, UHS-I, U3, A2, V30, Expanded Storage for Android Smartphones, Tablets, Nintendo-Switch (MB-ME512KA/AM)</msg>
-<status status="PASS" starttime="20230909 20:39:54.175" endtime="20230909 20:39:54.183"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.175" endtime="20230909 20:39:54.183"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_144")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.189" level="INFO">Amazon Basics Micro SDXC Memory Card with Full Size Adapter, A2, U3, Read Speed up to 100 MB/s, 128 GB, Black</msg>
-<status status="PASS" starttime="20230909 20:39:54.183" endtime="20230909 20:39:54.190"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.183" endtime="20230909 20:39:54.190"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_145")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.197" level="INFO">Fujifilm Instax Mini 11 Instant Camera + Shutter Compatible Carrying Case + Fuji Film Value Pack (20 Sheets) + Shutter Accessories Bundle, Color Filters, Photo Album, Assorted Frames (Lilac Purple,)</msg>
-<status status="PASS" starttime="20230909 20:39:54.190" endtime="20230909 20:39:54.197"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.190" endtime="20230909 20:39:54.197"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_146")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.204" level="INFO">Digital Camera, FHD 1080P Kids Camera with 32GB Card, 2 Batteries, Lanyard, 16X Zoom Anti Shake, 44MP Compact Portable Small Point and Shoot Cameras Gift for Kids Student Children Teens Girl Boy(Pink)</msg>
-<status status="PASS" starttime="20230909 20:39:54.198" endtime="20230909 20:39:54.204"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.197" endtime="20230909 20:39:54.204"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_147")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.211" level="INFO">Fujifilm Instax Mini 9 - Instant Camera Clear Purple with Clear Accents with Carrying Case + Fuji Instax Film Value Pack (40 Sheets) Accessories Bundle, Color Filters, Photo Album, Assorted Fra</msg>
-<status status="PASS" starttime="20230909 20:39:54.204" endtime="20230909 20:39:54.211"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.204" endtime="20230909 20:39:54.211"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_148")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.218" level="INFO">Kasa Indoor Pan/Tilt Smart Security Camera, 1080p HD Dog Camera 2.4GHz with Night Vision, Motion Detection for Baby and Pet Monitor, Cloud &amp; SD Card Storage, Works with Alexa &amp; Google Home (EC70)</msg>
-<status status="PASS" starttime="20230909 20:39:54.212" endtime="20230909 20:39:54.219"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.211" endtime="20230909 20:39:54.219"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_149")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.227" level="INFO">WYZE Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT</msg>
-<status status="PASS" starttime="20230909 20:39:54.219" endtime="20230909 20:39:54.227"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.219" endtime="20230909 20:39:54.227"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_150")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.233" level="INFO">Mini Projector for iPhone, ELEPHAS 2023 Upgraded 1080P HD Projector, 8000L Portable Projector with Tripod and Carry Bag, Movie Projector Compatible with Android/iOS/Windows/TV Stick/HDMI/USB</msg>
-<status status="PASS" starttime="20230909 20:39:54.228" endtime="20230909 20:39:54.234"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.227" endtime="20230909 20:39:54.234"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_151")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.242" level="INFO">SanDisk 128GB Ultra microSDXC UHS-I Memory Card with Adapter - 120MB/s, C10, U1, Full HD, A1, Micro SD Card - SDSQUA4-128G-GN6MA</msg>
-<status status="PASS" starttime="20230909 20:39:54.234" endtime="20230909 20:39:54.242"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.234" endtime="20230909 20:39:54.242"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_152")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.248" level="INFO">SanDisk 256GB Ultra microSDXC UHS-I Memory Card with Adapter - Up to 150MB/s, C10, U1, Full HD, A1, MicroSD Card - SDSQUAC-256G-GN6MA</msg>
-<status status="PASS" starttime="20230909 20:39:54.242" endtime="20230909 20:39:54.249"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.242" endtime="20230909 20:39:54.249"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_153")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.256" level="INFO">Security Cameras Wireless Outdoor, 1080P Battery Powered AI Motion Detection Spotlight Siren Alarm WiFi Surveillance Indoor Home Camera, Color Night Vision, 2-Way Talk, Waterproof, Cloud/SD Storage</msg>
-<status status="PASS" starttime="20230909 20:39:54.249" endtime="20230909 20:39:54.256"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.249" endtime="20230909 20:39:54.256"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_154")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.263" level="INFO">SanDisk 128GB microSDXC-Card, Licensed for Nintendo-Switch - SDSQXAO-128G-GNCZN</msg>
-<status status="PASS" starttime="20230909 20:39:54.257" endtime="20230909 20:39:54.263"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.256" endtime="20230909 20:39:54.263"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_155")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.271" level="INFO">Fujifilm Instax Mini Instant Camera Film: 20 Shoots Total, (10 Sheets x 2) - Capture Memories Anytime, Anywhere - Boomph Kit</msg>
-<status status="PASS" starttime="20230909 20:39:54.264" endtime="20230909 20:39:54.271"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.263" endtime="20230909 20:39:54.271"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_156")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.290" level="INFO">Polaroid Instant Color I-Type Film - 40x Film Pack (40 Photos) (6010)</msg>
-<status status="PASS" starttime="20230909 20:39:54.271" endtime="20230909 20:39:54.290"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.271" endtime="20230909 20:39:54.290"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_157")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.299" level="INFO">Google indoor Nest Security Cam 1080p (Wired) - 2nd Generation - Snow</msg>
-<status status="PASS" starttime="20230909 20:39:54.290" endtime="20230909 20:39:54.299"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.290" endtime="20230909 20:39:54.299"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_158")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.312" level="INFO">SanDisk 128GB Ultra SDXC UHS-I Memory Card - Up to 140MB/s, C10, U1, Full HD, SD Card - SDSDUNB-128G-GN6IN</msg>
-<status status="PASS" starttime="20230909 20:39:54.300" endtime="20230909 20:39:54.312"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.300" endtime="20230909 20:39:54.312"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_159")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.323" level="INFO">Kodak Ultramax 400 Color Print Film 36 Exp. 35mm DX 400 135-36 (108 Pics) (Pack of 3), Basic</msg>
-<status status="PASS" starttime="20230909 20:39:54.313" endtime="20230909 20:39:54.323"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.312" endtime="20230909 20:39:54.323"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_160")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.334" level="INFO">MagicFiber Microfiber Cleaning Cloth, 6 Pack - Premium Cloth for Glasses, Lens, Screens &amp; More</msg>
-<status status="PASS" starttime="20230909 20:39:54.324" endtime="20230909 20:39:54.334"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.324" endtime="20230909 20:39:54.334"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_161")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.345" level="INFO">Fujifilm Instax Mini Instant Film, 10 Sheets×5 Pack(Total 50 Shoots)</msg>
-<status status="PASS" starttime="20230909 20:39:54.335" endtime="20230909 20:39:54.345"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.334" endtime="20230909 20:39:54.346"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_162")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.356" level="INFO">Amazon Basics 50-inch Lightweight Camera Mount Tripod Stand With Bag</msg>
-<status status="PASS" starttime="20230909 20:39:54.346" endtime="20230909 20:39:54.356"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.346" endtime="20230909 20:39:54.356"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_163")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.366" level="INFO">GKTZ Kids Camera Instant Print - 1080P HD 0 Ink Instant Print Photo - Christmas Birthday Gifts for Age 3-8 Girls Boys - Portable Toy with 3 Rolls Photo Paper, 5 Color Pens, 32GB Card - Pink</msg>
-<status status="PASS" starttime="20230909 20:39:54.356" endtime="20230909 20:39:54.366"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.356" endtime="20230909 20:39:54.366"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_164")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.375" level="INFO">Fujifilm Instax Mini 11 Instant Camera + Fuji Instax Film 20 Shots + Protective Case + Frames Design Kit (Lilac Purple)</msg>
-<status status="PASS" starttime="20230909 20:39:54.366" endtime="20230909 20:39:54.375"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.366" endtime="20230909 20:39:54.376"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e31941c7f0b9faea7b842e34d20f8e54", element="E98516B21F0CE517A2A82D8071425434_element_165")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${product.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.385" level="INFO">Printing Camera for Kids with HD Dual Lens &amp; 3.5in Screen, 32GB TF Card, Selfie Video Camera, Print Paper, Mini Instant Print Digital Kids Camera, Gift for 3 4 5 6 7 8 9 Years Old Girls and Boys Toy</msg>
-<status status="PASS" starttime="20230909 20:39:54.376" endtime="20230909 20:39:54.386"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.376" endtime="20230909 20:39:54.386"/>
-</iter>
-<status status="PASS" starttime="20230909 20:39:54.092" endtime="20230909 20:39:54.386"/>
-</for>
-<kw name="Get Length" library="BuiltIn">
-<var>${products_size}</var>
-<arg>${products}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20230909 20:39:54.386" level="INFO">Length is 33</msg>
-<msg timestamp="20230909 20:39:54.386" level="INFO">${products_size} = 33</msg>
-<status status="PASS" starttime="20230909 20:39:54.386" endtime="20230909 20:39:54.386"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${products_size}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230909 20:39:54.387" level="INFO">33</msg>
-<status status="PASS" starttime="20230909 20:39:54.386" endtime="20230909 20:39:54.387"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:36.192" endtime="20230909 20:39:54.387"/>
-</kw>
-<kw name="tearDown" library="AmazonPage" type="TEARDOWN">
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20230909 20:39:54.387" endtime="20230909 20:39:56.552"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:54.387" endtime="20230909 20:39:56.552"/>
-</kw>
-<status status="PASS" starttime="20230909 20:39:28.431" endtime="20230909 20:39:56.553"/>
-</test>
-<status status="PASS" starttime="20230909 20:39:04.584" endtime="20230909 20:39:56.554"/>
+<status status="FAIL" starttime="20230909 21:07:32.543" endtime="20230909 21:08:05.764"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tesla Test">Tesla Test</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230909 21:07:42.843" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
+Make sure tests are run with a physical or virtual display.</msg>
 </errors>
 </robot>
